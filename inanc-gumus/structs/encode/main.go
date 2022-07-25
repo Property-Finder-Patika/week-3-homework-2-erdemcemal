@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"github.com/Property-Finder-Patika/week-3-homework-2-erdemcemal/inanc-gumus/structs"
 	"os"
 	"strconv"
 	"strings"
@@ -61,17 +62,10 @@ import (
 //
 // ---------------------------------------------------------
 
-type game struct {
-	ID    int
-	Name  string
-	Genre string
-	Price int
-}
-
 func main() {
 	// use your solution from the previous exercise
 
-	games := []game{
+	games := []models.Game{
 		{ID: 1, Name: "god of war", Genre: "action adventure", Price: 50},
 		{ID: 2, Name: "x-com 2", Genre: "strategy", Price: 40},
 		{ID: 3, Name: "minecraft", Genre: "sandbox", Price: 20},
@@ -84,7 +78,7 @@ func main() {
   > save   : exports the data to json and quits
   > quit   : quits
 `) // index the games by id
-		byID := make(map[int]game)
+		byID := make(map[int]models.Game)
 		for _, g := range games {
 			byID[g.ID] = g
 		}
